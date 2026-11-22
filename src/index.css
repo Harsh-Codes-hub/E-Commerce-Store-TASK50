@@ -1,1 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 @import "tailwindcss";
+
+* {
+  font-family: "fredoka";
+  color: #fefefe;
+}
+
+body {
+  background-color: #101010;
+}
+
