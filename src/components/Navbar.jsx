@@ -7,7 +7,8 @@ const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const themeIcon = (theme === "light") ? "ri-sun-fill" : "ri-moon-fill";
   return (
-    <header className="border-b border-(--border-muted)">
+    <header className="border-b border-(--border-muted) nav-shadow sticky top-0 left-0"
+    style={{background: "var(--gradient-b)"}}>
       <Container>
         <div className="py-4 flex gap-6 justify-between items-center">
           <div className="border-b-2 border-(--text) py-1">

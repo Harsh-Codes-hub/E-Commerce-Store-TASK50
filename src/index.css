@@ -60,46 +60,46 @@
   --gradient-highlight-t: linear-gradient(
     to top,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
   --gradient-highlight-b: linear-gradient(
     to bottom,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
 
   --gradient-highlight-l: linear-gradient(
     to left,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
   --gradient-highlight-r: linear-gradient(
     to right,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
 
   /* Diagonal highlight gradients */
   --gradient-highlight-tl: linear-gradient(
     to top left,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
   --gradient-highlight-tr: linear-gradient(
     to top right,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
 
   --gradient-highlight-bl: linear-gradient(
     to bottom left,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
   --gradient-highlight-br: linear-gradient(
     to bottom right,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
 }
 
@@ -154,51 +154,55 @@
   --gradient-highlight-t: linear-gradient(
     to top,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
   --gradient-highlight-b: linear-gradient(
     to bottom,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
 
   --gradient-highlight-l: linear-gradient(
     to left,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
   --gradient-highlight-r: linear-gradient(
     to right,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
 
   /* Diagonal highlight gradients */
   --gradient-highlight-tl: linear-gradient(
     to top left,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
   --gradient-highlight-tr: linear-gradient(
     to top right,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
 
   --gradient-highlight-bl: linear-gradient(
     to bottom left,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
   --gradient-highlight-br: linear-gradient(
     to bottom right,
     transparent,
-    var(--highlight)
+    var(--highlight) 90%
   );
 }
 
 body {
   background-color: #111111;
+}
+
+.theme-transition {
+  transition: all .3s ease-out;
 }
 
 .theme-btn {
@@ -217,5 +221,27 @@ body {
 }
 
 .theme-btn:active {
+  transform: scale(0.9);
+}
+
+.nav-shadow {
+  box-shadow: 0px 2px 8px var(--border-muted);
+}
+
+.common-btn {
+  color: var(--text-muted);
+  background: var(--gradient-r);
+  transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border: 1px solid var(--border-muted);
+  border-top: 1px solid var(--border);
+}
+
+.common-btn:hover {
+  color: var(--text);
+  background: var(--gradient-l);
+}
+
+.common-btn:active {
   transform: scale(0.9);
 }
