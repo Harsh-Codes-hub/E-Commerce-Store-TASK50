@@ -1,12 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
 @import "tailwindcss";
 
 * {
   font-family: "fredoka";
-  color: #fefefe;
+}
+
+:root {
+  color-scheme: light;
+}
+
+.light {
+  color-scheme: light;
+  --bg-dark: oklch(0.92 0 20);
+  --bg: oklch(0.96 0 20);
+  --bg-light: oklch(1 0 20);
+  --text: oklch(0.15 0 20);
+  --text-muted: oklch(0.4 0 20);
+  --highlight: oklch(1 0 20);
+  --border: oklch(0.6 0 20);
+  --border-muted: oklch(0.7 0 20);
+  --primary: oklch(0.4 0.1 20);
+  --secondary: oklch(0.4 0.1 200);
+  --danger: oklch(0.5 0.05 30);
+  --warning: oklch(0.5 0.05 100);
+  --success: oklch(0.5 0.05 160);
+  --info: oklch(0.5 0.05 260);
+  --gradient-b-r: linear-gradient(
+    to bottom right,
+    var(--bg-dark),
+    var(--bg-light) 90%
+  );
+}
+
+.dark {
+  color-scheme: dark;
+  --bg-dark: oklch(0.1 0 20);
+  --bg: oklch(0.15 0 20);
+  --bg-light: oklch(0.2 0 20);
+  --text: oklch(0.96 0 20);
+  --text-muted: oklch(0.76 0 20);
+  --highlight: oklch(0.5 0 20);
+  --border: oklch(0.4 0 20);
+  --border-muted: oklch(0.3 0 20);
+  --primary: oklch(0.76 0.1 20);
+  --secondary: oklch(0.76 0.1 200);
+  --danger: oklch(0.7 0.05 30);
+  --warning: oklch(0.7 0.05 100);
+  --success: oklch(0.7 0.05 160);
+  --info: oklch(0.7 0.05 260);
+  --gradient-b-r: linear-gradient(
+    to bottom right,
+    var(--bg-dark),
+    var(--bg-light) 90%
+  );
 }
 
 body {
-  background-color: #101010;
+  background-color: #111111;
 }
 
+.theme-btn {
+  color: var(--text-muted);
+  background: var(--gradient-b-r);
+  box-shadow: 0px 0px 6px var(--text-muted);
+  transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.theme-btn:hover {
+  color: var(--text);
+  background: var(--bg-light);
+  box-shadow: 1px 1px 4px var(--text);
+  transform: scale(1.1);
+}
+
+.theme-btn:active {
+  transform: scale(0.9);
+}
