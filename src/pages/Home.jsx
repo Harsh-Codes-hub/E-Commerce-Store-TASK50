@@ -1,10 +1,23 @@
 import { useContext } from "react";
 import { ProductContext } from "../contexts/ProductContext";
+import ProductCard from "../components/ProductCard";
 
 const Home = () => {
   const { products, loading, error } = useContext(ProductContext);
   const featureProducts = products.slice(0, 3);
-  console.log(featureProducts[2]);
+
+  const result =
+    loading === true ? (
+      <h2>Loading</h2>
+    ) : error ? (
+      <h2>{error}</h2>
+    ) : (
+      <ul className="flex justify-between items-center gap-4">
+        {featureProducts.map((product) => (
+          <ProductCard key={`productID-${product.id}`} {...product} />
+        ))}
+      </ul>
+    );
 
   return (
     <>
@@ -23,11 +36,7 @@ const Home = () => {
           Explore Shop <i className="ri-arrow-right-line"></i>
         </button>
       </section>
-      <section className="flex-1 w-full">
-        <ul>
- 
-        </ul>
-      </section>
+      <section className="flex-1 w-full mt-6">{result}</section>
     </>
   );
 };
