@@ -8,9 +8,13 @@ const Home = () => {
 
   const result =
     loading === true ? (
-      <h2>Loading</h2>
-    ) : error ? (
-      <h2>{error}</h2>
+      <div className="flex justify-center items-center">
+        <h2 className="text-2xl text-(--info)">Loading...</h2>
+      </div>
+    ) : (error) ? (
+      <div className="flex justify-center items-center">
+        <h2 className="text-2xl text-(--danger)">{error}</h2>
+      </div>
     ) : (
       <ul className="flex justify-between items-center gap-4">
         {featureProducts.map((product) => (
