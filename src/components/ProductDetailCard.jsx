@@ -1,5 +1,7 @@
 const ProductDetailCard = () => {
-  return <div></div>;
+  return <article className="w-full">
+    card
+  </article>;
 };
 
 export default ProductDetailCard;

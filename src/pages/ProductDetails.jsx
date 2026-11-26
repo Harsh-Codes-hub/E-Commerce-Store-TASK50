@@ -19,10 +19,10 @@ const ProductDetails = () => {
       products.find((product) => product.id === Number(id))
     );
 
-  const result = (typeof(filteredProduct) === "object") ? "object": "no object";
+  const result = (typeof(filteredProduct) === "object") ? (<ProductDetailCard />): filteredProduct;
 
   return (
-    <section className="flex items-center justify-center text-white">
+    <section className="flex items-center justify-center text-white mt-8 w-full">
       {result}
     </section>
   );
