@@ -3,7 +3,7 @@ import Container from "./Container";
 const Footer = () => {
   return (
     <footer
-      className="border-y border-(--border-muted)"
+      className="border-y border-(--border-muted) mt-4"
       style={{ background: "var(--gradient-b)" }}
     >
       <Container>

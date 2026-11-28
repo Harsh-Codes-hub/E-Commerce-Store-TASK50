@@ -27,11 +27,13 @@ const ProductProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchProducts()
-  }, [])
+    fetchProducts();
+  }, []);
 
   return (
-    <ProductContext.Provider value={{products, loading, error, fetchProducts}}>
+    <ProductContext.Provider
+      value={{ products, loading, error, fetchProducts }}
+    >
       {children}
     </ProductContext.Provider>
   );

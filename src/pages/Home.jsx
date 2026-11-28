@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { ProductContext } from "../contexts/ProductContext";
 import ProductCard from "../components/ProductCard";
 
@@ -11,12 +12,12 @@ const Home = () => {
       <div className="flex justify-center items-center">
         <h2 className="text-2xl text-(--info)">Loading...</h2>
       </div>
-    ) : (error) ? (
+    ) : error ? (
       <div className="flex justify-center items-center">
         <h2 className="text-2xl text-(--danger)">{error}</h2>
       </div>
     ) : (
-      <ul className="flex justify-between items-center gap-4">
+      <ul className="grid grid-cols-3 gap-4">
         {featureProducts.map((product) => (
           <ProductCard key={`productID-${product.id}`} {...product} />
         ))}
@@ -33,12 +34,12 @@ const Home = () => {
         <h2 className="text-(--text-muted) text-5xl">
           Discover products across different categories.
         </h2>
-        <button
-          type="button"
+        <Link
+          to="/shop"
           className="text-(--text-muted) py-4 px-4 rounded-3xl text-xl common-btn"
         >
           Explore Shop <i className="ri-arrow-right-line"></i>
-        </button>
+        </Link>
       </section>
       <section className="flex-1 w-full mt-6">{result}</section>
     </>
